@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+      html{
+        font-family: sans-serif;
+        margin: 0px;
+        padding: 0px;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        height: 100%
+      }
+
+      h1{
+        text-align: center;
+      }
+
+      .fruit{
+        padding: 10px;
+        margin: 5px;
+      }
+
+      .FRESH_BEST{
+        background-color: #8bc34a;
+      }
+
+      .FRESH{
+        background-color: #ffc107;
+      }
+
+    </style>
+    <script async defer data-website-id="de5e18ac-311c-4aec-b90b-19d2d6e4e9f0" src="https://umami.mrmonk.dev/umami.js"></script>
+    <title>Saison Kalender - {{ month }} | wildferments.org</title>
+  </head>
+  <body>
+    <h1 class="heading">Frisches Regionales Obst und Gemüse im {{ month }}</h1>
+    <div class="container">
+      {{#fruits}}
+      {{#state }}
+      <div class="fruit {{ state }}">{{ name }}</div>
+      {{/state}}
+      {{/fruits}}
+    </div>
+    <div style="display: grid;">
+      <a href="/de/{{ previousMonth }}" style="grid-column: 1; text-align: left; padding: 10px;">{{ previousMonth }}</a>
+      <a href="/about" style="grid-column: 2; text-align: center; padding: 10px;">Über diese Seite</a>
+      <a href="/de/{{ nextMonth }}" style="grid-column: 3; text-align: right; padding: 10px;">{{ nextMonth }}</a>
+    </div>
+    <div style="text-align: center">wildferments.org 2020</div>
+  </body>
+</html>

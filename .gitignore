@@ -1,0 +1,4 @@
+init-tsc.sh
+/node_modules
+/doc
+/package-lock.json
