@@ -1,4 +1,6 @@
 init-tsc.sh
+docker_compose.yml
+
 /node_modules
 /doc
-/package-lock.json
+/build
