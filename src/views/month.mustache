@@ -3,7 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <script defer>
+    const noHitMarkerClass = 'no-hit';
+
+    function getFruits(){
+        var fruits = Array.from(document.querySelectorAll('.fruit'))
+        return fruits
+    }
+
+    function removeClass(node, className){
+        node.classList.remove(className)
+    }
+
+    function addClass(node, className){
+        removeClass(node, className)
+        node.classList.add(className)
+    }
+
+    function resetSearch(){
+        var fruits = getFruits()
+        fruits.forEach((n)=>{
+            removeClass(n, noHitMarkerClass)
+        })
+    }
+
+    function seachFruits(search){
+        var fruits = getFruits()
+        var re = new RegExp(search.toLowerCase().trim())
+
+        fruits.forEach((n)=>{
+            if(re.test(n.innerText.toLowerCase())){
+                removeClass(n, noHitMarkerClass)
+            }else{
+                addClass(n, noHitMarkerClass)
+            }
+        })
+    }
+    </script>
     <style>
       html{
         font-family: sans-serif;
@@ -11,12 +47,29 @@
         padding: 0px;
         display: grid;
         justify-items: center;
-        align-items: center;
+        # align-items: center;
         height: 100%
+      }
+
+      .input-container{
+        display: flex;
+        padding: 5px;
+      }
+
+      input{
+        width: 100%;
+        height: 35px;
+        margin: 0;
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
       h1{
         text-align: center;
+      }
+
+      .no-hit{
+        display: None;
       }
 
       .fruit{
@@ -38,6 +91,7 @@
   </head>
   <body>
     <h1 class="heading">Frisches Regionales Obst und Gemüse im {{ month }}</h1>
+    <div class="input-container"><input type="text" placeholder="Search" name="search" value="" onkeyup="seachFruits(this.value)"></div>
     <div class="container">
       {{#fruits}}
       {{#state }}
