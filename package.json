@@ -1,15 +1,15 @@
 {
   "name": "season-calendar",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "a season calendar",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
     "build": "tsc && cp -R src/views build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Max Mönch",
+  "license": "Mit",
   "devDependencies": {
     "@types/luxon": "^1.25.0",
     "nodemon": "^2.0.4",
