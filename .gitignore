@@ -1,6 +1,5 @@
-init-tsc.sh
-docker_compose.yml
+.env
+.git
+.DS_Store
 
-/node_modules
-/doc
-/build
+node_modules
