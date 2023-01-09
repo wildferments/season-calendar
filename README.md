@@ -20,4 +20,4 @@ MIT - No Warranty!
 
 # author
 
-[My Homepage](https://mrmonk.dev)
+[visit my blog](https://mrmonk.dev/blog/projects/microtools/fermentation-calendar/)
